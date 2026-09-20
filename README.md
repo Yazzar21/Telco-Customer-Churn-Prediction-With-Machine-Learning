@@ -29,7 +29,7 @@ Meskipun Logistic Regression memimpin secara metrik performa klasifikasi, ekstra
 ![Feature Importance](10_Feature_Importance-LightGBM.png)
 
 Sedangkan, untuk Feature Importance pada Logistic Regression:
-![Feature Importance](10_Feature_Importance-Logistic_Regression.png)
+![Feature Importance](10_Feature_Importance-Logistic_Regression_(LR).png)
 
 **Kesimpulan dan Analisis:**
 Perusahaan harus memfokuskan anggaran retensi untuk memberikan promo khusus atau diskon peningkatan layanan pada pelanggan baru di bulan ke-2 hingga ke-6 berlangganan, terutama membujuk mereka agar beralih dari kontrak bulanan menjadi kontrak 1 tahun.
