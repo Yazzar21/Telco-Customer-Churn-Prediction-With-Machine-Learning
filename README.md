@@ -20,13 +20,16 @@ Proyek ini menguji 6 algoritma Machine Learning. Karena data tidak seimbang, eva
 
 ## 💡 Wawasan Bisnis (Business Insights) & Rekomendasi
 
-Berdasarkan ekstraksi **Feature Importance** dari model LightGBM (yang polanya juga tervalidasi secara konsisten oleh algoritma XGBoost, CatBoost, dan Random Forest), terungkap 3 pemicu utama *churn*:
+Meskipun Logistic Regression memimpin secara metrik performa klasifikasi, ekstraksi Feature Importance dari model ensemble modern seperti LightGBM (yang polanya tervalidasi konsisten oleh XGBoost, CatBoost, dan Random Forest) mengungkap 3 pemicu utama churn yang lebih masuk akal secara bisnis:
 
 1. **Total Charges & Monthly Charges:** Tagihan bulanan yang dirasa terlalu tinggi/membengkak.
 2. **Tenure Months:** Pelanggan baru (umur langganan pendek) sangat rentan untuk pindah operator.
 3. **Internet Service (Fiber Optic) & Contract:** Pengguna Fiber Optic tanpa ikatan kontrak tahunan adalah kelompok paling berisiko.
 
 ![Feature Importance](10_Feature_Importance-LightGBM.png)
+
+Sedangkan, untuk Feature Importance pada Logistic Regression:
+![Feature Importance](10_Feature_Importance-Logistic_Regression.png)
 
 **Kesimpulan dan Analisis:**
 Perusahaan harus memfokuskan anggaran retensi untuk memberikan promo khusus atau diskon peningkatan layanan pada pelanggan baru di bulan ke-2 hingga ke-6 berlangganan, terutama membujuk mereka agar beralih dari kontrak bulanan menjadi kontrak 1 tahun.
