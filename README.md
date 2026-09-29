@@ -129,6 +129,8 @@ Pastikan Python 3.9+ sudah terpasang pada perangkat Anda.
    ```bash
    python Analisis_Churn.py
 
+---
+
 👤 **Author**
 - GitHub: @Yazzar21
 - Lisensi: Proyek ini didistribusikan di bawah lisensi MIT.
