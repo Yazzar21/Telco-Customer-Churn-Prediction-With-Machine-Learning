@@ -53,7 +53,7 @@ Enam algoritma klasifikasi diuji dengan pembagian data *Stratified Train-Test Sp
 6. CatBoost (Categorical Gradient Boosting)
 
 ### Perbandingan Kinerja Model
-![Perbandingan Performa 6 Model](Grafik_Perbandingan_Performa_6_Model_ML_Yang_Dibandingkan.png)
+![Perbandingan Performa 6 Model](Grafik_Perbandingan_Performa_6_Model_ML_Untuk_Telco_Customer_Churn_Data_Analytics.png)
 
 | Algoritma | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 | :--- | :---: | :---: | :---: | :---: | :---: |
