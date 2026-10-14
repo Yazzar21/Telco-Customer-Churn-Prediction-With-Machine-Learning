@@ -2,10 +2,11 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
-[![Tree Models](https://img.shields.io/badge/Ensemble-LightGBM%20%7C%20CatBoost%20%7C%20XGBoost-blue)](https://github.com/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-End-to-End Data Analytics dan Machine Learning Pipeline untuk memprediksi probabilitas atrisi nasabah (*customer churn*) pada industri telekomunikasi. Proyek ini membandingkan 6 algoritma klasifikasi, mengekstraksi *feature importance* lintas arsitektur model, dan merumuskan strategi retensi berbasis estimasi mitigasi risiko finansial.
+End-to-End Data Analytics, Machine Learning, dan **MLOps Pipeline** untuk memprediksi probabilitas atrisi nasabah (*customer churn*) pada industri telekomunikasi. Proyek ini membandingkan 6 algoritma klasifikasi, mengekstraksi *feature importance* lintas arsitektur model, merumuskan strategi retensi berbasis estimasi mitigasi risiko finansial, hingga mendeploy model ke dalam REST API dan web dashboard interaktif siap-produksi[cite: 15].
 
 ---
 
@@ -21,6 +22,7 @@ Tantangan operasional yang dihadapi:
 1. Mengidentifikasi faktor dominan pendorong atrisi pelanggan menggunakan analisis multivariat dan *Feature Importance*.
 2. Membangun model prediktif terkalibrasi untuk memitigasi *False Negative* (memaksimalkan tangkapan nasabah berisiko churn).
 3. Mengukur estimasi dampak finansial (*financial impact*) dari strategi intervensi retensi terfokus.
+4. **Membangun Sistem MLOps End-to-End** (FastAPI backend + Streamlit frontend) agar model dapat diakses secara *real-time* oleh tim operasional[cite: 15].
 
 ---
 
@@ -47,7 +49,7 @@ Pelanggan dengan model kontrak **Month-to-month** menyumbang persentase atrisi t
 Enam algoritma klasifikasi diuji dengan pembagian data *Stratified Train-Test Split* untuk menjaga rasio churn asli pada pengujian:
 1. Logistic Regression (Baseline Linear)
 2. Random Forest Classifier (Bagging)
-3. AdaBoost / ExtraTrees / Naive Bayes *(sesuaikan model ke-6 Anda)*
+3. AdaBoost / ExtraTrees / Naive Bayes
 4. XGBoost (Gradient Boosting)
 5. LightGBM (Leaf-wise Gradient Boosting)
 6. CatBoost (Categorical Gradient Boosting)
@@ -92,9 +94,9 @@ Sebagai pembanding interpretasi koefisien linear pada Logistic Regression:
 
 ### Simulasi Penyelamatan Pendapatan (Revenue Rescue Model)
 Berdasarkan sampel populasi nasabah aktif:
-* Jika rata-rata pengeluaran nasabah berisiko churn adalah **$65/bulan** ($780/tahun).
-* Model berhasil mendeteksi **~55% nasabah yang berpotensi churn** secara akurat (*Recall ~55%*).
-* Diterapkan intervensi retensi terfokus dengan biaya perlakuan/promo sebesar **$20/nasabah** dengan asumsi *acceptance rate* penawaran sebesar **35%**:
+- Jika rata-rata pengeluaran nasabah berisiko churn adalah **$65/bulan** ($780/tahun).
+- Model berhasil mendeteksi **~55% nasabah yang berpotensi churn** secara akurat (*Recall ~55%*).
+- Diterapkan intervensi retensi terfokus dengan biaya perlakuan/promo sebesar **$20/nasabah** dengan asumsi *acceptance rate* penawaran sebesar **35%**:
 
 > **Kesimpulan ROI:** Menggunakan pendekatan prediktif terarah mampu menghemat hingga **40–60% anggaran retensi** dibandingkan pendekatan *mass-discount* konvensional, sembari secara langsung mengamankan arus kas tahunan dari kelompok nasabah bernilai tinggi (*High-Value At-Risk Customers*).
 
@@ -105,32 +107,30 @@ Berdasarkan sampel populasi nasabah aktif:
 
 ---
 
-## 🛠️ 6. Cara Menjalankan Proyek (Reproducibility)
+## 🚀 6. Sistem MLOps & Production Deployment
+
+Untuk mentransformasikan model eksploratif menjadi aplikasi nyata, proyek ini dilengkapi dengan arsitektur **End-to-End MLOps** berbasis *Microservices*:
+- **Model Pipeline (`src/train.py`)**: Mengemas *preprocessing* dan algoritma LightGBM ke dalam format serialisasi tunggal (`churn_pipeline.joblib`).
+- **REST API (`src/api.py`)**: Backend cepat berbasis **FastAPI** dengan validasi data masuk menggunakan *Pydantic* (`src/schemas.py`).
+- **Interactive UI (`src/app.py`)**: Dashboard berbasis **Streamlit** bagi operasional bisnis untuk melakukan analisis risiko secara *real-time*[cite: 15].
+
+### Pratinjau Antarmuka Sistem:
+
+**A. Frontend Web Dashboard (Streamlit)**[cite: 16]  
+![Streamlit Dashboard](assets/Streamlit_Dashboard.png)
+
+**B. Backend API Documentation (FastAPI Swagger UI)**[cite: 17]  
+![FastAPI Docs](assets/Fastapi_Docs.png)
+
+---
+
+## 🛠️ 7. Cara Menjalankan Proyek (Reproducibility)
 
 ### Prasyarat
 Pastikan Python 3.9+ sudah terpasang pada perangkat Anda.
 
-### Instalasi & Eksekusi
+### Panduan Instalasi & Eksekusi:
 1. Kloning Repositori Ini:
    ```bash
    git clone [https://github.com/Yazzar21/Telco-Customer-Churn-Prediction-With-Machine-Learning.git](https://github.com/Yazzar21/Telco-Customer-Churn-Prediction-With-Machine-Learning.git)
    cd Telco-Customer-Churn-Prediction-With-Machine-Learning
-2. Buat & Aktifkan *virtual environment* (direkomendasikan):
-   ```bash
-   python -m venv venv
-   # Windows:
-   venv\Scripts\activate
-   # Linux/MacOS:
-   source venv/bin/activate
-3. Pasangkan Seluruh Dependensi:
-   ```bash
-   pip install -r requirements.txt
-4. Jalankan *Script* Analisis & Pemodelan ML:
-   ```bash
-   python Analisis_Churn.py
-
----
-
-👤 **Author**
-- GitHub: @Yazzar21
-- Lisensi: Proyek ini didistribusikan di bawah lisensi MIT.
