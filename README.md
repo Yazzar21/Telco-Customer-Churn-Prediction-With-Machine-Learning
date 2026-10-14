@@ -117,10 +117,10 @@ Untuk mentransformasikan model eksploratif menjadi aplikasi nyata, proyek ini di
 ### Pratinjau Antarmuka Sistem:
 
 **A. Frontend Web Dashboard (Streamlit)**[cite: 16]  
-![Streamlit Dashboard](assets/Streamlit_Dashboard.png)
+![Streamlit Dashboard](Streamlit_Dashboard.png)
 
 **B. Backend API Documentation (FastAPI Swagger UI)**[cite: 17]  
-![FastAPI Docs](assets/Fastapi_Docs.png)
+![FastAPI Docs](Fastapi_Docs.png)
 
 ---
 
