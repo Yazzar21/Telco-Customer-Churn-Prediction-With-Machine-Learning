@@ -158,7 +158,7 @@ c. Nyalakan Frontend Dashboard => (jangan lupa aktifkan venv) streamlit run src/
 
 ---
 
-👤 Author
-GitHub: @Yazzar21
-LinkedIn: Muhammad Rafa Ihsanuddin Yazzar
-Lisensi: Proyek ini didistribusikan di bawah lisensi MIT.
+👤 **Author**
+- GitHub: [@Yazzar21](https://github.com/Yazzar21)
+- LinkedIn: [Muhammad Rafa Ihsanuddin Yazzar](https://www.linkedin.com/in/muhammadrafaihsanuddinyazzar/)
+- Lisensi: Proyek ini didistribusikan di bawah lisensi MIT.
