@@ -134,3 +134,31 @@ Pastikan Python 3.9+ sudah terpasang pada perangkat Anda.
    ```bash
    git clone [https://github.com/Yazzar21/Telco-Customer-Churn-Prediction-With-Machine-Learning.git](https://github.com/Yazzar21/Telco-Customer-Churn-Prediction-With-Machine-Learning.git)
    cd Telco-Customer-Churn-Prediction-With-Machine-Learning
+
+2. Buat & Aktifkan *virtual environtment*:
+   ```bash
+   python -m venv venv
+   # Windows:
+   venv\Scripts\activate
+   # Linux/MacOS:
+   source venv/bin/activate
+
+3. Pasangkan seluruh Dependensi:
+   ```bash
+   pip install -r requirements.txt
+
+4. Jalankan eksperimen pada Data Lama:
+   ```bash
+   python Analisis_Churn.py
+
+5. Jalankan sistem MLOps:
+a. Generate Model => python src/train.py
+b. Nyalakan Backend API => uvicorn src.api:app --reload
+c. Nyalakan Frontend Dashboard => (jangan lupa aktifkan venv) streamlit run src/app.py, kemudian akses website nya
+
+---
+
+👤 Author
+GitHub: @Yazzar21
+LinkedIn: Muhammad Rafa Ihsanuddin Yazzar
+Lisensi: Proyek ini didistribusikan di bawah lisensi MIT.
